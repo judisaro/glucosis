@@ -236,7 +236,7 @@ function inicializacionFondos() {
 }
 
 function dibujar() {
-
+	lienzo.clearRect(0,0,900,500);
 	switch(pantalla) {
 		    case 1:
 			    velocidad = 2;
@@ -279,7 +279,10 @@ function comprobarParticula(particula) {
 		if(particula.id == idCelulaActual){
 			puntos ++;
 			console.log("PUNTOS :" + puntos);
-			velocidadParticulas++;
+			if(velocidadParticulas < 10){
+				velocidadParticulas++;
+			}
+			
 		}else{
 			switch(particula.id) {
 		    case 1:
